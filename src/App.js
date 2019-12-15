@@ -1,5 +1,6 @@
 import React from "react";
 import data from "./data";
+import "./App.css";
 
 const STATUS = {
   OPEN: "open",
@@ -30,7 +31,7 @@ class Display extends React.Component {
     return (
       <div>
         <p onClick={this.toggleDisplay}>{`${name} -> STATUS : ${status}`}</p>
-        <div>
+        <div className="child-nodes">
           {status === STATUS.OPEN
             ? childNames.map(ele => {
                 return <Display data={data[ele] || {}} name={ele} key={ele} />;
